@@ -1,16 +1,8 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoInstance<GameManager>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] bool isGameActive;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool IsGameActive { get => isGameActive; } // now GameManager has an instance access -> GameManager.Instance -> and since IsGameActive is public then you can access it with GameManager.Instance.IsGameActive
 }
